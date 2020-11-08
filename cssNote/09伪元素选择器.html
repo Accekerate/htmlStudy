@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>伪元素选择器</title>
+    <style>
+        p{
+            font-size: 20px;
+        }
+        /*
+            伪元素,表示页面中一些特殊的并不存在的元素(在特殊位置的元素)
+                伪元素使用 :: 开头
+                    ::first-letter 第一个字母
+                    ::first-line    第一行
+                    ::selection     表示选中的元素
+
+                    ::before        表示元素起始位置
+                    ::after         表示元素的最后位置
+                        以上两个伪元素.必须结合content属性来使用
+        */
+        p::first-letter{
+            font-size: 30px;
+        }
+        p::first-line{
+            color: darkturquoise;
+        }
+        p::selection{
+            color: dimgray;
+        }
+        div::before{
+            content:'abc';
+            color: firebrick;
+        }
+            div::after{
+            content:'def';
+            color: firebrick;
+            }
+            p:hover{
+                color: gold;
+            }
+            p::before{
+                content: '[]';
+            }
+    </style>
+</head>
+<body>
+    <q>hello</q>
+    <div>
+        hello hi how are you.
+    </div>
+    <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus culpa perferendis, id fugiat animi quae cupiditate aspernatur eveniet corrupti ipsum quas beatae fuga ex doloremque recusandae, praesentium nihil? Nulla, nobis!
+    </p>
+</body>
+</html>
